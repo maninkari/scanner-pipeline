@@ -4,13 +4,16 @@ export const state = () => ({
 })
 
 export const getters = {
-  getState(state) {
+  getState: (state) => {
     return state.name
   },
 }
 
 export const mutations = {
-  changeState(state) {
-    return (name) => (state.name = name)
+  updateState: (state, payload) => {
+    state.name = payload.name
+    state.token = payload.token
   },
 }
+
+// export const actions = {}

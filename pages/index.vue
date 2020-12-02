@@ -1,18 +1,23 @@
 <template>
   <div class="container">
-    <currentstate></currentstate>
-    <states></states>
+    <div class="h-48 flex flex-wrap content-start grid grid-rows-3">
+      <states />
+    </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import States from '@/components/states'
-import Currentstate from '@/components/currentstate'
 
 export default {
   components: {
     States,
-    Currentstate,
+  },
+  methods: {
+    ...mapMutations({
+      changeState: 'updateState',
+    }),
   },
 }
 </script>
